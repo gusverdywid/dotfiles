@@ -1,0 +1,16 @@
+/.git/
+/log/
+/logs/
+/images/
+/tmp/
+*.tags*
+*.gemtags*
+*.csv
+*.tsv
+*.tmp*
+*.old
+*.plist
+*.pdf
+*.md
+*.log
+Library/*
