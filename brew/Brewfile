@@ -41,7 +41,7 @@ cask install 'sequel-pro'
 cask install 'kdiff3'
 
 # Misc.
-cask install '1password'
+cask install 'lastpass'
 cask install 'crashplan'
 cask install 'google-chrome'
 cask install 'firefox'
