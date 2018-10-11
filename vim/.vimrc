@@ -18,7 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'raimondi/delimitMate'
 " Plugin 'jiangmiao/auto-pairs'
 " Code autocompletion
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 " Lining up (align) code
 Plugin 'godlygeek/tabular'
 " HTML expander
