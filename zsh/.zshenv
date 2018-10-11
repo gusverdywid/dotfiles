@@ -37,11 +37,10 @@ POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 # Zsh-autosuggestion
 #
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=95"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=95"
 
 # Enable autosuggestions automatically.
-zle-line-init() {
- zle autosuggest-start
-}
-zle -N zle-line-init
-
+# zle-line-init() {
+ # zle autosuggest-start
+# }
+# zle -N zle-line-init
