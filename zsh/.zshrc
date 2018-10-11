@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 #
 # Executes commands at the start of an interactive session.
 #
@@ -36,3 +37,22 @@ set -o vi
 # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+export PATH="/Users/gus/Library/Python/2.7/bin:$PATH"
+
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source ~/.bin/tmuxinator.zsh
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# zprof
