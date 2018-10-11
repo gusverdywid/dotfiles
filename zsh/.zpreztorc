@@ -53,7 +53,8 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:autosuggestions' color 'yes'
 
 # Set query found color
-zstyle ':prezto:module:autosuggestions:color' found ''
+# Solarized colors: light=230 dark=234
+zstyle ':prezto:module:autosuggestions:color' found 'fg=23'
 
 
 #
