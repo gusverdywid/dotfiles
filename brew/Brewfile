@@ -23,6 +23,8 @@ brew 'zsh-completions'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
 brew 'tidy-html5'
+# Facebook path picker (files list picker and command execution)
+brew 'fpp'
 
 install caskroom/cask/brew-cask
 
