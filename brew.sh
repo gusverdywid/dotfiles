@@ -59,6 +59,8 @@ brew install 'fpp'
 brew install 'lastpass-cli' --with-pinentry
 # Better looking git diff
 brew install 'diff-so-fancy'
+# Better http client than curl
+brew install 'httpie'
 
 
 # Util
