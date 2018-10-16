@@ -55,7 +55,11 @@ brew install 'mongodb'
 brew install 'nginx'
 # Facebook path picker (files list picker and command execution)
 brew install 'fpp'
+# Password manager
 brew install 'lastpass-cli' --with-pinentry
+# Better looking git diff
+brew install 'diff-so-fancy'
+
 
 # Util
 brew cask install 'alfred'
