@@ -26,7 +26,7 @@ brew install 'fzf'
 brew install 'nvm'
 brew install 'rbenv'
 brew install 'ruby-build'
-brew install 'redis', restart_service: true
+brew install 'redis'
 brew install 'postgres'
 brew install 'sqlite'
 brew install 'mysql@5.7'
