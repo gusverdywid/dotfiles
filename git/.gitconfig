@@ -1,1 +1,43 @@
-/Users/gus/.gitconfig
+[user]
+	name = Agustinus Verdy Widyawiradi
+  email = verdywid@gmail.com
+[core]
+  whitespace = trailing-space,space-before-tab
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[apply]
+  whitespace = fix
+[helo]
+  autocorrect = 1
+[color]
+  ui = true
+[merge]
+  tool = kdiff3
+[mergetool]
+  keepBackup = false
+[mergetool "kdiff3"]
+  path = /usr/local/bin/kdiff3
+  trustExitCode  = false
+  keepBackup  = false
+[diff]
+  tool = kdiff3
+[difftool]
+  prompt = false
+[difftool "kdiff3"]
+  path = /usr/local/bin/kdiff3
+  ; path = ~/Applications/kdiff3.app/Contents/MacOS/kdiff3
+  trustExitCode  = false
+  keepBackup  = false
+[credential]
+  helper  = osxkeychain
+[http]
+  sslverify  = false
+	postBuffer = 524288000
+[pull]
+	rebase = true
+[push]
+	default = simple
+[https]
+	postBuffer = 524288000
+[ssh]
+	postBuffer = 524288000
