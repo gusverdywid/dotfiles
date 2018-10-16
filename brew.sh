@@ -55,6 +55,7 @@ brew install 'mongodb'
 brew install 'nginx'
 # Facebook path picker (files list picker and command execution)
 brew install 'fpp'
+brew install 'lastpass-cli' --with-pinentry
 
 # Util
 brew cask install 'alfred'
@@ -78,7 +79,6 @@ brew cask install 'postman'
 brew cask install 'pgadmin4'
 
 # Misc.
-brew cask install 'lastpass'
 brew cask install 'google-chrome'
 brew cask install 'firefox'
 brew cask install 'evernote'
