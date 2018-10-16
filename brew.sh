@@ -74,7 +74,6 @@ brew cask install 'pgadmin4'
 
 # Misc.
 brew cask install 'lastpass'
-brew cask install 'crashplan'
 brew cask install 'google-chrome'
 brew cask install 'firefox'
 brew cask install 'evernote'
