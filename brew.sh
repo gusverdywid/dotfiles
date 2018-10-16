@@ -68,6 +68,8 @@ brew cask install 'alfred'
 brew cask install 'amethyst'
 brew cask install 'flux'
 brew cask install 'the-unarchiver'
+# Switch to prevent computer going to sleep or start screen saver
+brew cask install 'caffeine'
 
 # Dev
 brew cask install 'iterm2'
