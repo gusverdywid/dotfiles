@@ -17,6 +17,13 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
+# ZSH
+brew install 'zsh'
+brew install 'zsh-completions'
+echo "fpath=(/usr/local/share/zsh-completions $fpath)" >> ~/.zshrc
+rm -f ~/.zcompdump; compinit
+chmod go-w '/usr/local/share'
+
 brew install 'openssl'
 brew install 'qt5'
 brew install 'imagemagick'
@@ -36,8 +43,6 @@ brew install 'imagemagick'
 brew install 'vim' --with-override-system-vim --with-lua --with-csope
 brew install 'macvim' --custom-icons --env-std --with-override-system-vim --with-lua --with-csope
 brew install 'neovim'
-brew install 'zsh'
-brew install 'zsh-completions'
 brew install 'tmux'
 brew install 'reattach-to-user-namespace'
 brew install 'tidy-html5'
