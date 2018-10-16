@@ -94,6 +94,5 @@ brew cask alfred link
 
 brew linkapps
 
-brew cask cleanup
 brew cleanup
 
