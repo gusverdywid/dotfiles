@@ -61,6 +61,10 @@ brew install 'lastpass-cli' --with-pinentry
 brew install 'diff-so-fancy'
 # Better http client than curl
 brew install 'httpie'
+# Jump around to frequently use directory
+brew install 'z'
+echo '. /usr/local/etc/profile.d/z.sh' >> ~/.bashrc
+echo '. /usr/local/etc/profile.d/z.sh' >> ~/.zshrc
 
 
 # Util
