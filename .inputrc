@@ -3,3 +3,6 @@ set keymap vi
 
 # Required so that <Enter> doesn't show up as "^M"
 set convert-meta on
+
+# Ignore case
+set completion-ignore-case on
