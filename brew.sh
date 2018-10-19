@@ -23,6 +23,7 @@ brew install 'zsh-completions'
 echo "fpath=(/usr/local/share/zsh-completions $fpath)" >> ~/.zshrc
 rm -f ~/.zcompdump; compinit
 chmod go-w '/usr/local/share'
+chsh -s /usr/local/bin/zsh
 
 brew install 'openssl'
 brew install 'qt5'
@@ -61,6 +62,7 @@ brew install 'lastpass-cli' --with-pinentry
 brew install 'diff-so-fancy'
 # Better http client than curl
 brew install 'httpie'
+
 # Jump around to frequently use directory
 brew install 'z'
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.bashrc
