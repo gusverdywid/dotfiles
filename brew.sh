@@ -62,6 +62,8 @@ brew install 'lastpass-cli' --with-pinentry
 brew install 'diff-so-fancy'
 # Better http client than curl
 brew install 'httpie'
+# Persistent ssh
+brew install 'autossh'
 
 # Jump around to frequently use directory
 brew install 'z'
