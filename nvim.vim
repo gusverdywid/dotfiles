@@ -47,6 +47,8 @@ Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 " Git indicator on the 'gutter' (line numbers)
 Plug 'airblade/vim-gitgutter'
+" Toggle and navigate marks
+Plug 'kshenoy/vim-signature'
 " File finder
 Plug 'ctrlpvim/ctrlp.vim'
 " Source code browser
