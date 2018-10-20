@@ -46,7 +46,8 @@ Plug 'bling/vim-airline'
 " Airline theme
 Plug 'vim-airline/vim-airline-themes'
 " Color scheme
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'iCyMind/NeoSolarized'
 " Git indicator on the 'gutter' (line numbers)
 Plug 'airblade/vim-gitgutter'
 " Toggle and navigate marks
@@ -92,11 +93,14 @@ call plug#end()
 syntax on
 " Use the Solarized Dark theme
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme NeoSolarized
 " colorscheme hybrid_material
 " let g:enable_bold_font=1
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
+" Set truecolor
+set termguicolors
 
 " Hide the buffers instead of closing it
 set hidden
@@ -532,13 +536,12 @@ let g:EasyMotion_smartcase = 1 " Smartcase for global search
 " Disable key mapping
 let g:gitgutter_map_keys = 0
 
-
-"------------------------------------------------------------------------------
-" GitGutter
-"------------------------------------------------------------------------------
 " Display current branch
 set statusline+=%{FugitiveStatusline()}
 set statusline+=%*
+
+" Override sign (NeoSolarised customises it)
+let g:gitgutter_override_sign_column_highlight = 0
 
 
 "------------------------------------------------------------------------------
