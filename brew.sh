@@ -119,6 +119,8 @@ brew cask install 'cheatsheet'
 brew cask install 'filebot'
 # Screencapture into GIF
 brew cask install 'licecap'
+# Music tagger
+brew cask install 'musicbrainz-picard'
 
 
 brew cask alfred link
