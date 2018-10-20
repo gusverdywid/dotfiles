@@ -77,6 +77,10 @@ brew cask install 'the-unarchiver'
 # Switch to prevent computer going to sleep or start screen saver
 brew cask install 'caffeine'
 
+# Security
+# Monitor webcam and mic
+brew cask install 'oversight'
+
 # Dev
 brew cask install 'iterm2'
 brew cask install 'atom'
