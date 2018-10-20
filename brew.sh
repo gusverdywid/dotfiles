@@ -91,6 +91,8 @@ brew cask install 'dash'
 brew cask install 'gitup'
 brew cask install 'postman'
 brew cask install 'pgadmin4'
+# A git client
+brew cask install 'fork'
 
 # Misc.
 brew cask install 'google-chrome'
