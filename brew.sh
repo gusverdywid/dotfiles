@@ -113,6 +113,9 @@ brew cask install 'utorrent'
 brew cask install 'sketch'
 # Better email client
 brew cask install 'polymail'
+# Show key bind of any apps
+brew cask install 'cheatsheet'
+
 
 brew cask alfred link
 
