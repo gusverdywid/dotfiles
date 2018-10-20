@@ -43,6 +43,8 @@ Plug 'w0rp/ale'
 " Status bar
 " Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'bling/vim-airline'
+" Airline theme
+Plug 'vim-airline/vim-airline-themes'
 " Color scheme
 Plug 'altercation/vim-colors-solarized'
 " Git indicator on the 'gutter' (line numbers)
@@ -293,8 +295,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " let g:airline#extensions#tabline#tab_min_count=1000
 
 " Solarized theme
-" set background=dark
-" let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_theme='solarized'
 " let g:airline_theme = "hybrid"
 
 " Bufferline integrations
