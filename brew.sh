@@ -80,6 +80,8 @@ brew cask install 'caffeine'
 # Security
 # Monitor webcam and mic
 brew cask install 'oversight'
+# Uncover persistenly install programm
+brew cask install 'knockknock'
 
 # Dev
 brew cask install 'iterm2'
