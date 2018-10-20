@@ -117,6 +117,8 @@ brew cask install 'polymail'
 brew cask install 'cheatsheet'
 # Renaming movie, fetching artwork and subtitle
 brew cask install 'filebot'
+# Screencapture into GIF
+brew cask install 'licecap'
 
 
 brew cask alfred link
