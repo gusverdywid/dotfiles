@@ -285,6 +285,9 @@ let g:airline_powerline_fonts=1
 " Smarter tab line (automatically display the all buffers when only
 " one tab open
 let g:airline#extensions#tabline#enabled=1
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 " Show just the filename
 " let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
@@ -293,6 +296,42 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " let g:airline#extensions#tabline#show_buffers=0
 " let g:airline#extensions#tabline#buffer_min_count=1000
 " let g:airline#extensions#tabline#tab_min_count=1000
+
+" configure the minimum number of tabs needed to show the tabline
+let g:airline#extensions#tabline#buffer_min_count = 2
+" configure whether close button should be shown
+let g:airline#extensions#tabline#show_close_button = 1
+" configure symbol used to represent close button
+let g:airline#extensions#tabline#close_symbol = 'X'
+" enable/disable displaying index of the buffer
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+" Switching buffer through index
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
+
+" Tabline buffer index format
+let g:airline#extensions#tabline#buffer_idx_format = {
+\ '0': '0 ',
+\ '1': '1 ',
+\ '2': '2 ',
+\ '3': '3 ',
+\ '4': '4 ',
+\ '5': '5 ',
+\ '6': '6 ',
+\ '7': '7 ',
+\ '8': '8 ',
+\ '9': '9 '
+\}
 
 " Solarized theme
 let g:airline_solarized_bg='dark'
