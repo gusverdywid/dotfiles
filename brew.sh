@@ -115,6 +115,8 @@ brew cask install 'sketch'
 brew cask install 'polymail'
 # Show key bind of any apps
 brew cask install 'cheatsheet'
+# Renaming movie, fetching artwork and subtitle
+brew cask install 'filebot'
 
 
 brew cask alfred link
