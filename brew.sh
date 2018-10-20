@@ -103,6 +103,8 @@ brew cask install 'vlc'
 brew cask install 'dnscrypt'
 brew cask install 'utorrent'
 brew cask install 'sketch'
+# Better email client
+brew cask install 'polymail'
 
 brew cask alfred link
 
