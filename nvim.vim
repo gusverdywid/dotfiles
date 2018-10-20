@@ -123,9 +123,12 @@ let mapleader=","
 set pastetoggle=<F10>
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
+silent execute ('!mkdir -p ' . &backupdir)
 set directory=~/.vim/swaps
+silent execute ('!mkdir -p ' . &directory)
 if exists("&undodir")
   set undodir=~/.vim/undo
+  silent execute ('!mkdir -p ' . &undodir)
 endif
 
 " Respect modeline in files
