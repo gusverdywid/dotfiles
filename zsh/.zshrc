@@ -58,8 +58,6 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 export PATH="/Users/gus/Library/Python/2.7/bin:$PATH"
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.bin/tmuxinator.zsh
