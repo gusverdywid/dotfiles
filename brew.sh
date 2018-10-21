@@ -26,12 +26,14 @@ chmod go-w '/usr/local/share'
 sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s /usr/local/bin/zsh
 
+# Fuzzy finder
+brew install 'fzy'
+
 brew install 'openssl'
 brew install 'qt5'
 brew install 'imagemagick'
 brew install 'node'
 brew install 'the_silver_searcher'
-brew install 'fzf'
 brew install 'nvm'
 brew install 'rbenv'
 brew install 'ruby-build'
