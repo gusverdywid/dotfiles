@@ -31,6 +31,9 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 
 
+# Set the directory filter program
+ENHANCD_FILTER=fzy:fzf
+
 #
 # Zsh-autosuggestion
 #
