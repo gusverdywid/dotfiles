@@ -23,6 +23,7 @@ brew install 'zsh-completions'
 echo "fpath=(/usr/local/share/zsh-completions $fpath)" >> ~/.zshrc
 rm -f ~/.zcompdump; compinit
 chmod go-w '/usr/local/share'
+sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s /usr/local/bin/zsh
 
 brew install 'openssl'
