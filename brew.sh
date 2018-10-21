@@ -26,6 +26,9 @@ chmod go-w '/usr/local/share'
 sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s /usr/local/bin/zsh
 
+# Zsh plugin manager
+brew install 'zplug'
+
 # Fuzzy finder
 brew install 'fzy'
 

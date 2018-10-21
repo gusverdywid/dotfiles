@@ -11,14 +11,30 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+###############################################################################
+# zplug section
+###############################################################################
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# Interactive cd
+zplug "b4b4r07/enhancd", use:init.sh
+
+# zplug check returns true if all packages are installed
+# Therefore, when it returns false, run zplug install
+if ! zplug check; then
+    zplug install
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+# End of zplug
+
+
 # include locally installed Cassandra in PATH
 if [ -d "$HOME/services" ]; then
   PATH="$PATH:$HOME/services/cassandra/bin"
 fi
-
-# Customize to your needs...
-# Autocomplete directories
-source ~/.zsh/enhancd/zsh/enhancd.zsh
 
 #
 # History substring search
