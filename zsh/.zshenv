@@ -13,8 +13,6 @@ fi
 # Use Homebrew directories to manage ruby rather than the ~/.rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 
-# Activate autoenv
-source /usr/local/opt/autoenv/activate.sh
 
 #
 # Powerlevel9k

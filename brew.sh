@@ -64,6 +64,8 @@ brew install 'diff-so-fancy'
 brew install 'httpie'
 # Persistent ssh
 brew install 'autossh'
+# Env switcher for the shell
+brew install 'direnv'
 
 # Jump around to frequently use directory
 brew install 'z'
