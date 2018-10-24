@@ -10,9 +10,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# Use Homebrew directories to manage ruby rather than the ~/.rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
-
 
 #
 # Powerlevel9k

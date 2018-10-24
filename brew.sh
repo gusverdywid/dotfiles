@@ -38,8 +38,8 @@ brew install 'imagemagick'
 brew install 'node'
 brew install 'the_silver_searcher'
 brew install 'nvm'
-brew install 'rbenv'
-brew install 'ruby-build'
+# brew install 'rbenv'
+# brew install 'ruby-build'
 brew install 'redis'
 brew install 'postgres'
 brew install 'sqlite'
@@ -72,6 +72,15 @@ brew install 'httpie'
 brew install 'autossh'
 # Env switcher for the shell
 brew install 'direnv'
+
+# Ruby version manager
+brew install 'chruby'
+echo 'source /usr/local/opt/chruby/share/chruby/chruby.sh' >> /etc/bashrc
+echo 'source /usr/local/opt/chruby/share/chruby/auto.sh' >> /etc/bashrc
+echo 'source /usr/local/opt/chruby/share/chruby/chruby.sh' >> ~/.zshrc
+echo 'source /usr/local/opt/chruby/share/chruby/auto.sh' >> ~/.zshrc
+# Installer by creator of chruby
+brew install 'ruby-install'
 
 # Jump around to frequently use directory
 brew install 'z'
