@@ -35,7 +35,6 @@ brew install 'fzy'
 brew install 'openssl'
 brew install 'qt5'
 brew install 'imagemagick'
-brew install 'node'
 brew install 'the_silver_searcher'
 brew install 'nvm'
 # brew install 'rbenv'
@@ -89,6 +88,8 @@ brew install 'z'
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.bashrc
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.zshrc
 
+brew install 'node'
+npm install -g n
 
 # Util
 brew cask install 'alfred'
