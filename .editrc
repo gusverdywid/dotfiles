@@ -1,5 +1,9 @@
+# Use vim bindings for irb, console, mysql
 bind -v
+
+# Tab completion
 bind \\t rl_complete
 bind ^r em-inc-search-prev
+
 set editing-mode vi
 set -o vi
