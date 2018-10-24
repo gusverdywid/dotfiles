@@ -72,6 +72,8 @@ brew install 'httpie'
 brew install 'autossh'
 # Env switcher for the shell
 brew install 'direnv'
+# CLI MySQL client with auto-completion
+brew install 'mycli'
 
 # Ruby version manager
 brew install 'chruby'
