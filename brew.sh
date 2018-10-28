@@ -145,6 +145,8 @@ brew cask install 'filebot'
 brew cask install 'licecap'
 # Music tagger
 brew cask install 'musicbrainz-picard'
+# Google cloud sdk
+brew cask install 'google-cloud-sdk'
 
 
 brew cask alfred link
