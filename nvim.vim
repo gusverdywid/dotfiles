@@ -302,7 +302,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " let g:airline#extensions#tabline#tab_min_count=1000
 
 " configure the minimum number of tabs needed to show the tabline
-let g:airline#extensions#tabline#buffer_min_count = 2
+" let g:airline#extensions#tabline#buffer_min_count = 2
 " configure whether close button should be shown
 let g:airline#extensions#tabline#show_close_button = 1
 " configure symbol used to represent close button
