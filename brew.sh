@@ -88,9 +88,6 @@ brew install 'z'
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.bashrc
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.zshrc
 
-brew install 'node'
-npm install -g n
-
 # Util
 brew cask install 'alfred'
 brew cask install 'amethyst'
