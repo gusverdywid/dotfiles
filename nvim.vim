@@ -34,6 +34,8 @@ Plug 'tpope/vim-rails'
 Plug 'slim-template/vim-slim'
 " RSpec runner
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+" Test runner
+Plug 'janko-m/vim-test'
 " Support for ruby bundler
 Plug 'tpope/vim-bundler'
 " Buffer explorer
@@ -566,13 +568,29 @@ let delimitMate_expand_space = 1
 "------------------------------------------------------------------------------
 " RSpec.vim
 "------------------------------------------------------------------------------
-let g:rspec_runner = "os_x_iterm2"
-let g:rspec_command = "compile rspec | set makeprg=spring | Make rspec {spec}"
+" let g:rspec_runner = "os_x_iterm2"
+" let g:rspec_command = "compile rspec | set makeprg=spring | Make rspec {spec}"
 
-nnoremap <leader>tf :call RunCurrentSpecFile()<CR>
-nnoremap <leader>tl :call RunNearestSpec()<CR>
-nnoremap <leader>tp :call RunLastSpec()<CR>
-nnoremap <leader>ta :call RunAllSpecs()<CR>
+" nnoremap <leader>tf :call RunCurrentSpecFile()<CR>
+" nnoremap <leader>tl :call RunNearestSpec()<CR>
+" nnoremap <leader>tp :call RunLastSpec()<CR>
+" nnoremap <leader>ta :call RunAllSpecs()<CR>
+
+
+"------------------------------------------------------------------------------
+" vim-test
+"------------------------------------------------------------------------------
+" Don't clear screen before each run
+let g:test#preserve_screen = 1
+
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>tl :TestNearest<CR>
+nnoremap <leader>tp :TestLast<CR>
+nnoremap <leader>ta :TestSuite<CR>
 
 
 "------------------------------------------------------------------------------
