@@ -598,7 +598,7 @@ nnoremap <leader>ta :TestSuite<CR>
 "------------------------------------------------------------------------------
 call neomake#configure#automake('w')
 let g:neomake_open_list = 2
-let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 let g:airline#extensions#neomake#enabled=1
 
 
