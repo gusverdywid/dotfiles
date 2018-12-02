@@ -598,8 +598,29 @@ nnoremap <leader>ta :TestSuite<CR>
 "------------------------------------------------------------------------------
 call neomake#configure#automake('w')
 let g:neomake_open_list = 2
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
 let g:airline#extensions#neomake#enabled=1
+
+" Ruby settings
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+let g:neomake_ruby_rubocop_maker = {
+\ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names', '--auto-correct'],
+\ 'errorformat': '%f:%l:%c: %m',
+\ }
+" Callback for reloading file in buffer when eslint has finished and maybe has
+" autofixed some stuff
+function! s:reload_upon_neomake_finished()
+  let jobinfo = g:neomake_hook_context.jobinfo
+  if (jobinfo.maker.name ==? 'rubocop')
+    checktime
+  endif
+endfunction
+
+augroup auto_reload_neomake
+  " Clear any old commands
+  au!
+  " Reload buffer upon neomake finished executing the job
+  autocmd User NeomakeJobFinished call s:reload_upon_neomake_finished()
+augroup END
 
 
 "------------------------------------------------------------------------------
