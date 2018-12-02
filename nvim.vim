@@ -75,6 +75,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 " Asynchronously run programs
 Plug 'neomake/neomake'
+" Vue syntax highlights
+Plug 'posva/vim-vue'
 
 
 " All of your Plugins must be added before the following line
