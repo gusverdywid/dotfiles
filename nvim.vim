@@ -44,7 +44,7 @@ Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 " Syntax checking
 " Plug 'scrooloose/syntastic'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 " Show opened-buffers as a tabline
 " Plug 'bling/vim-bufferline'
 " Status bar
@@ -73,6 +73,8 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 " Async build and test dispatcher
 Plug 'tpope/vim-dispatch'
+" Asynchronously run programs
+Plug 'neomake/neomake'
 
 
 " All of your Plugins must be added before the following line
@@ -569,6 +571,15 @@ nnoremap <leader>tf :call RunCurrentSpecFile()<CR>
 nnoremap <leader>tl :call RunNearestSpec()<CR>
 nnoremap <leader>tp :call RunLastSpec()<CR>
 nnoremap <leader>ta :call RunAllSpecs()<CR>
+
+
+"------------------------------------------------------------------------------
+" Neomake
+"------------------------------------------------------------------------------
+call neomake#configure#automake('w')
+let g:neomake_open_list = 2
+let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
+let g:airline#extensions#neomake#enabled=1
 
 
 "------------------------------------------------------------------------------
