@@ -10,6 +10,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'raimondi/delimitMate'
 " Plug 'jiangmiao/auto-pairs'
 " Code autocompletion
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'valloric/youcompleteme', { 'for': ['javascript', 'go', 'rust'] }
 " Lining up (align) code
 Plug 'godlygeek/tabular'
@@ -580,6 +587,13 @@ nnoremap <leader>bi :Bundle check <Bar> :Bundle install<CR>
 " Bufferline
 "------------------------------------------------------------------------------
 " let g:bufferline_fname_mod = ':t'
+
+
+"------------------------------------------------------------------------------
+" Deoplete for autocompletion
+"------------------------------------------------------------------------------
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 
 "------------------------------------------------------------------------------
