@@ -75,6 +75,10 @@ brew install 'httpie'
 brew install 'autossh'
 # Env switcher for the shell
 brew install 'direnv'
+echo '' >> ~/.zshrc
+echo '# Initialize direnv for shell env switcher' >> ~/.zshrc
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+
 # CLI MySQL client with auto-completion
 brew install 'mycli'
 
