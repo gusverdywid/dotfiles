@@ -12,7 +12,7 @@
 [color]
   ui = true
 [merge]
-  tool = kdiff3
+	tool = vscode
 [mergetool]
   keepBackup = false
 [mergetool "kdiff3"]
@@ -20,7 +20,7 @@
   trustExitCode  = false
   keepBackup  = false
 [diff]
-  tool = kdiff3
+	tool = vscode
 [difftool]
   prompt = false
 [difftool "kdiff3"]
@@ -41,3 +41,7 @@
 	postBuffer = 524288000
 [ssh]
 	postBuffer = 524288000
+[difftool "vscode"]
+	cmd = "code --wait --diff  "
+[mergetool "vscode"]
+	cmd = "code --wait "
