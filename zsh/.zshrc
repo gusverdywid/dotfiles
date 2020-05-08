@@ -92,3 +92,6 @@ alias ngrok='/Users/verdy/.bin/ngrok'
 
 . /usr/local/opt/asdf/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+
+eval "$(direnv hook zsh)"
