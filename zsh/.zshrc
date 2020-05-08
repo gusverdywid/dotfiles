@@ -82,3 +82,4 @@ if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 # zprof
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
