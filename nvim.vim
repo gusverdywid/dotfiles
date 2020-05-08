@@ -211,6 +211,14 @@ function! StripWhitespace()
   call setreg('/', old_query)
 endfunction
 
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+  endfun
+
 " Automatic commands
 if has("autocmd")
   " Enable file type detection
@@ -219,6 +227,14 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
   " Treat .md files as Markdown
   autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+
+  " Show trailing whitepace and spaces before a tab:
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+  " Automatically remove trailing whitespace
+  autocmd BufWritePre * call StripWhitespace()
+  " Don't auto remove whitespace in markdown file
+  autocmd FileType markdown let b:noStripWhitespace=1
 endif
 
 
