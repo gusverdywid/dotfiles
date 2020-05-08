@@ -67,6 +67,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source ~/.bin/tmuxinator.zsh
 
+# Load chruby
+if [[ -e /usr/local/opt/chruby/share/chruby ]]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/gus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/gus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
