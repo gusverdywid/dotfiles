@@ -242,7 +242,7 @@ endif
 " Keymaps
 "------------------------------------------------------------------------------
 " Un-highlight search
-nnoremap <esc> :noh<return><esc> 
+nnoremap <esc> :noh<return><esc>
 " Needed to avoid random jump since vim internally uses escape
 nnoremap <esc>^[ <esc>^[
 " Close quickfix window
