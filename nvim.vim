@@ -308,7 +308,7 @@ let NERDSpaceDelims=1
 "------------------------------------------------------------------------------
 " Airline (replacement of Powerline)
 "------------------------------------------------------------------------------
-" let g:airline_extensions = ['branch'] 
+" let g:airline_extensions = ['branch']
 
 set laststatus=2
 
