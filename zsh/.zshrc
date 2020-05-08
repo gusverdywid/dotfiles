@@ -83,3 +83,6 @@ if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
