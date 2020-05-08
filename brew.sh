@@ -48,7 +48,11 @@ brew install 'pgcli'
 brew install 'imagemagick'
 brew install 'vim' --with-override-system-vim --with-lua --with-csope
 brew install 'macvim' --custom-icons --env-std --with-override-system-vim --with-lua --with-csope
+
+# Install neovim with python3 client
 brew install 'neovim'
+pip3 install --user neovim
+
 brew install 'tmux'
 brew install 'reattach-to-user-namespace'
 brew install 'tidy-html5'
