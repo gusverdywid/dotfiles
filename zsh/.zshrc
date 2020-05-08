@@ -80,3 +80,5 @@ if [ -f '/Users/gus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Us
 if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
