@@ -440,33 +440,7 @@ endif
 
 
 "-------------------------------------------------------------------------------
-" Syntastic
-"-------------------------------------------------------------------------------
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-
-let g:syntastic_mode_map = {
-  \ "mode": "active",
-  \ "active_filetypes": ["ruby", "php", "python", "javascript"],
-  \ "passive_filetypes": ["puppet"] }
-
-" HTML5 checker
-let g:syntastic_html_tidy_exec = 'tidy5'
-" Ruby checker (use rubocop then fallback to mri)
-let g:syntastic_ruby_checkers = ["rubocop", "mri"]
-" Rubocop path
-let g:syntastic_ruby_rubocop_exec = '/usr/local/var/rbenv/shims/rubocop'
-
-
-"-------------------------------------------------------------------------------
-" ALE (syntax checking)
+" ALE (syntax checking, fixer and go-to definition)
 "-------------------------------------------------------------------------------
 let g:ale_set_highlights = 1
 let g:ale_sign_column_always = 1
