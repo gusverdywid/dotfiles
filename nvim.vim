@@ -50,6 +50,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'Shougo/echodoc.vim'
 Plug 'valloric/youcompleteme', { 'for': ['javascript', 'go', 'rust'] }
 " Lining up (align) code
 Plug 'godlygeek/tabular'
@@ -662,6 +663,14 @@ nnoremap <leader>bi :Bundle check <Bar> :Bundle install<CR>
 "------------------------------------------------------------------------------
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+
+"------------------------------------------------------------------------------
+" Echodoc (Displays function signatures from completions in the command line)
+"------------------------------------------------------------------------------
+" Use neovim's virtual virtual text feature.
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'virtual'
 
 
 "------------------------------------------------------------------------------
