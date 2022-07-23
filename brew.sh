@@ -30,7 +30,9 @@ chsh -s /usr/local/bin/zsh
 brew install 'zplug'
 
 # Fuzzy finder
-brew install 'fzy'
+# brew install 'fzy'
+# Fuzzy finder (integrated with zoxide)
+brew install 'fzf'
 
 brew install 'openssl'
 brew install 'qt5'
@@ -161,4 +163,3 @@ brew cask alfred link
 brew linkapps
 
 brew cleanup
-

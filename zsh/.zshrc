@@ -51,9 +51,6 @@ bindkey -M vicmd 'j' history-substring-search-down # Vi j
 # Navigate console in vim mode
 set -o vi
 
-# Command line fuzzy finder
-[ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 #
 # Base16 Shell
 # BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
@@ -81,7 +78,6 @@ if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 
 # zprof
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
@@ -95,3 +91,5 @@ alias ngrok='/Users/verdy/.bin/ngrok'
 
 
 eval "$(direnv hook zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
