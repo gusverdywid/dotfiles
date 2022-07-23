@@ -69,7 +69,7 @@ Plug 'slim-template/vim-slim'
 " RSpec runner
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 " Test runner
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 " Support for ruby bundler
 Plug 'tpope/vim-bundler'
 " Buffer explorer
@@ -602,6 +602,8 @@ let g:test#preserve_screen = 1
 
 " make test commands execute using dispatch.vim
 let test#strategy = "dispatch"
+
+let g:test#javascript#runner = 'jest'
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nnoremap <leader>tf :TestFile<CR>
