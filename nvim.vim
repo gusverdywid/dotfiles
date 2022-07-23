@@ -1,3 +1,36 @@
+"------------------------------------------------------------------------------
+" ALE but before loading the plugin
+"------------------------------------------------------------------------------
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+"
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 0
+" This does not work in combination with Deoplete hence the autocmd below
+let g:ale_close_preview_on_insert = 1
+" Do not open preview window on cursor pointing on issues
+let g:ale_cursor_detail = 0
+" Use floating window instead of normal preview window for detail output; Only
+" works with popupwin
+let g:ale_detail_to_floating_preview = 1
+" Use floating window instead of normal preview window for preview; Only works
+" with popupwin
+let g:ale_floating_preview = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 1
+let g:ale_set_balloons = 1
+
+augroup CloseLoclistWindowGroup
+  autocmd!
+  autocmd QuitPre * if empty(&buftype) | lclose | endif
+augroup END
+
+
+"------------------------------------------------------------------------------
+" VimPlug
+"------------------------------------------------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Easy commenting
@@ -9,7 +42,7 @@ Plug 'terryma/vim-multiple-cursors'
 " Auto completion of quotes, brackets, etc.
 Plug 'raimondi/delimitMate'
 " Plug 'jiangmiao/auto-pairs'
-" Code autocompletion
+" Autocompletion
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -45,8 +78,9 @@ Plug 'mbbill/undotree'
 " Find content
 Plug 'mileszs/ack.vim'
 " Syntax checking
-" Plug 'scrooloose/syntastic'
-" Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
+" Autocompletion and intellisense
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Show opened-buffers as a tabline
 " Plug 'bling/vim-bufferline'
 " Status bar
@@ -76,7 +110,7 @@ Plug 'tpope/vim-fugitive'
 " Async build and test dispatcher
 Plug 'tpope/vim-dispatch'
 " Asynchronously run programs
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 " Vue syntax highlights
 Plug 'posva/vim-vue'
 
@@ -455,6 +489,7 @@ let g:syntastic_ruby_rubocop_exec = '/usr/local/var/rbenv/shims/rubocop'
 "-------------------------------------------------------------------------------
 " ALE (syntax checking)
 "-------------------------------------------------------------------------------
+let g:ale_set_highlights = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fix_on_save = 1
@@ -465,14 +500,26 @@ let g:ale_set_loclist = 1
 let g:ale_set_quickfix = 0
 " Only show 5 errors
 let g:ale_list_window_size = 5
+let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
 let g:ale_linters = {
-\   'javascript': ['eslint'],
+\   'css': ['stylelint'],
+\   'jsx': ['prettier', 'eslint', 'stylelint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['brakeman', 'rubocop', 'ruby']
 \}
-let g:ale_fixers = {
-\   'javascript': ['eslint'],
+let b:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'jsx': ['prettier', 'eslint', 'stylelint'],
+\   'typescript': ['prettier', 'eslint'],
+\   'javascript': ['prettier', 'eslint'],
 \   'ruby': ['rubocop'],
 \}
+
+nnoremap <silent> <Plug>(ale_find_references_rel) :ALEFindReferences -relative<Return>
+
+nnoremap <leader><S-G> <Plug>(ale_go_to_definition)
+nnoremap <leader>f <Plug>(ale_find_references_rel)
 
 
 "-------------------------------------------------------------------------------
@@ -612,31 +659,31 @@ nnoremap <leader>ta :TestSuite<CR>
 "------------------------------------------------------------------------------
 " Neomake
 "------------------------------------------------------------------------------
-call neomake#configure#automake('w')
-let g:neomake_open_list = 2
-let g:airline#extensions#neomake#enabled=1
+" call neomake#configure#automake('w')
+" let g:neomake_open_list = 2
+" let g:airline#extensions#neomake#enabled=1
 
-" Ruby settings
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
-let g:neomake_ruby_rubocop_maker = {
-\ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names', '--auto-correct'],
-\ 'errorformat': '%f:%l:%c: %m',
-\ }
-" Callback for reloading file in buffer when eslint has finished and maybe has
-" autofixed some stuff
-function! s:reload_upon_neomake_finished()
-  let jobinfo = g:neomake_hook_context.jobinfo
-  if (jobinfo.maker.name ==? 'rubocop')
-    checktime
-  endif
-endfunction
+" " Ruby settings
+" let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+" let g:neomake_ruby_rubocop_maker = {
+" \ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names', '--auto-correct'],
+" \ 'errorformat': '%f:%l:%c: %m',
+" \ }
+" " Callback for reloading file in buffer when eslint has finished and maybe has
+" " autofixed some stuff
+" function! s:reload_upon_neomake_finished()
+  " let jobinfo = g:neomake_hook_context.jobinfo
+  " if (jobinfo.maker.name ==? 'rubocop')
+    " checktime
+  " endif
+" endfunction
 
-augroup auto_reload_neomake
-  " Clear any old commands
-  au!
-  " Reload buffer upon neomake finished executing the job
-  autocmd User NeomakeJobFinished call s:reload_upon_neomake_finished()
-augroup END
+" augroup auto_reload_neomake
+  " " Clear any old commands
+  " au!
+  " " Reload buffer upon neomake finished executing the job
+  " autocmd User NeomakeJobFinished call s:reload_upon_neomake_finished()
+" augroup END
 
 
 "------------------------------------------------------------------------------
