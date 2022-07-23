@@ -91,6 +91,8 @@ echo 'source /usr/local/opt/chruby/share/chruby/auto.sh' >> ~/.zshrc
 # Installer by creator of chruby
 brew install 'ruby-install'
 
+brew install 'asdf'
+
 # Jump around to frequently use directory
 brew install 'z'
 echo '. /usr/local/etc/profile.d/z.sh' >> ~/.bashrc
