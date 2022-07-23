@@ -319,27 +319,6 @@ let NERDSpaceDelims=1
 
 
 "------------------------------------------------------------------------------
-" Powerline
-"------------------------------------------------------------------------------
-
-" set laststatus=2
-" set guifont=Sauce\ Code\ Powerline:h15
-" let g:Powerline_symbols='fancy'
-" set encoding=utf-8
-" set t_Co=256
-" set fillchars+=stl:\ ,stlnc:\
-" set term=xterm-256color
-" set termencoding=utf-8
-
-" if has("gui_running")
-  " let s:uname = system("uname")
-  " if s:uname == "Darwin\n"
-    " set guifont=Sauce\ Code\ Powerline:h15
-  " endif
-" endif
-
-
-"------------------------------------------------------------------------------
 " Airline (replacement of Powerline)
 "------------------------------------------------------------------------------
 " let g:airline_extensions = ['branch']
