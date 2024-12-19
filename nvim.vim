@@ -220,7 +220,6 @@ set nostartofline
 set ruler
 " Show marker
 set textwidth=100
-set columns=80
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -271,6 +270,12 @@ if has("autocmd")
   " Don't auto remove whitespace in markdown file
   autocmd FileType markdown let b:noStripWhitespace=1
 endif
+
+" Treat .jsx as .js
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 
 "------------------------------------------------------------------------------
@@ -535,7 +540,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nmap <c-g> <Plug>(easymotion-s)
 
 " 2-characters bi-directional jump
-nmap <c-space> <Plug>(easymotion-s2)
+nmap <leader><S-Space> <Plug>(easymotion-s2)
 
 " n-character search motion (replaces search)
 map  / <Plug>(easymotion-sn)
@@ -548,13 +553,13 @@ omap / <Plug>(easymotion-tn)
 
 " hjkl-motions
 " Jump forward in current line
-map <c-l> <Plug>(easymotion-lineforward)
+map <leader><S-L> <Plug>(easymotion-lineforward)
 " Search up
-map <c-k> <Plug>(easymotion-k)
+map <leader><S-K> <Plug>(easymotion-k)
 " Search down
-map <c-j> <Plug>(easymotion-j)
+map <leader><S-J> <Plug>(easymotion-j)
 " Jump backward in current line
-map <c-h> <Plug>(easymotion-linebackward)
+map <leader><S-H> <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 let g:EasyMotion_smartcase = 1 " Smartcase for global search
@@ -665,6 +670,18 @@ nnoremap <leader>bi :Bundle check <Bar> :Bundle install<CR>
 "------------------------------------------------------------------------------
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+" Close preview window upon finish editing
+augroup CloseAutoCompletionPreviewWindow
+  autocmd!
+  autocmd InsertLeave * silent! pclose!
+augroup END
+
+" Use ALE as completion sources for all code.
+call deoplete#custom#option({
+\ 'sources': {
+\   '_': ['file', 'around', 'ale'],
+\ }
+\})
 
 
 "------------------------------------------------------------------------------
@@ -689,7 +706,7 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
-  let g:ackprg = 'ag --nogroup --nocolor --vimgrep'
+  let g:ackprg = 'ag --nogroup --nocolor --vimgrep --hidden'
   " let g:ackprg = 'ag --vimgrep'
 endif
 
@@ -714,4 +731,3 @@ endif
 
 " autocmd VimLeave * call SaveSess()
 " autocmd VimEnter * call RestoreSess()
-

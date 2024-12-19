@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # zmodload zsh/zprof
 #
 # Executes commands at the start of an interactive session.
@@ -11,28 +18,32 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Heroku autocomplete
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 ###############################################################################
 # zplug section
 ###############################################################################
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# Heroku autocomplete
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
 # Interactive cd
 zplug "b4b4r07/enhancd", use:init.sh
 
-# zplug check returns true if all packages are installed
-# Therefore, when it returns false, run zplug install
-if ! zplug check; then
-    zplug install
+zplug "fdw/ranger-zoxide", as:command, use:"ranger-zoxide.plugin.zsh"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+# zplug load --verbose
 # End of zplug
 
 
@@ -62,7 +73,7 @@ export PATH="/Users/gus/Library/Python/2.7/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
 
 # Load chruby
 if [[ -e /usr/local/opt/chruby/share/chruby ]]; then
@@ -78,7 +89,7 @@ if [ -f '/Users/gus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 
 # zprof
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+export PATH="$(brew --prefix qt@5)/bin:$PATH"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
@@ -86,10 +97,11 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias ngrok='/Users/verdy/.bin/ngrok'
 
 
-. /usr/local/opt/asdf/asdf.sh
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-
-
 eval "$(direnv hook zsh)"
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

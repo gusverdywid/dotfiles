@@ -33,6 +33,7 @@ brew install 'zplug'
 # brew install 'fzy'
 # Fuzzy finder (integrated with zoxide)
 brew install 'fzf'
+brew install 'zoxide'
 
 brew install 'openssl'
 brew install 'qt5'
