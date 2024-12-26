@@ -9,7 +9,15 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Show all files including the hidden ones (dot files)
-defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder AppleShowAllFiles -bool true
+# Show all files ext
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool true
+# Show path at the bottom
+defaults write com.apple.finder "ShowPathbar" -bool true
+# Set search scope to current folder
+# Possible values: "SCcf" - current folder; "SCsp" - previous search scope; "SCev" - whole mac
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+killall Finder
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -25,8 +33,8 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
 defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 
-# Disable Resume system-wide
-# defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+# Enable resuming / restoring windows after quitting
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true
 
 # Disable automatic termination of inactive apps
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
@@ -120,3 +128,44 @@ sudo systemsetup -settimezone "Asia/Jakarta" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+
+defaults write com.apple.dock "autohide" -bool true
+defaults write com.apple.dock "orientation" -string "bottom"
+defaults write com.apple.dock "tilesize" -int "56"
+defaults write com.apple.dock "minimize-to-application" -bool true
+killall Dock
+
+# Dragging with 3-fingers
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool true
+defaults write com.apple.AppleBluetoothMultitouch.trackpad "TrackpadThreeFingerDrag" -bool true
+# 3-fingers swipe gestures need to be disabled for 3-fingers dragging
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerHorizSwipeGesture" -int "0"
+defaults write com.apple.AppleBluetoothMultitouch.trackpad "TrackpadThreeFingerHorizSwipeGesture" -int "0"
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerVertSwipeGesture" -int "0"
+defaults write com.apple.AppleBluetoothMultitouch.trackpad "TrackpadThreeFingerVertSwipeGesture" -int "0"
+
+# Tap to click
+defaults write com.apple.AppleMultitouchTrackpad "Clicking" -bool true
+defaults write com.apple.AppleBluetoothMultitouch.trackpad "Clicking" -bool true
+
+defaults write com.apple.AppleMultitouchTrackpad "ActuateDetents" -bool true
+defaults write com.apple.AppleMultitouchTrackpad "ForceSuppressed" -bool false
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerTapGesture" -int "0"
+
+# Cursor speed
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float "0.875"
+
+# Clicking on scrollbar jumps to the spot instead of next page
+defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
+
+# Double-click title bar
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize"
+
+# Ask to keep changes when closing docs
+defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool true
+
+# Force-click to peek
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool true
+
+# Switch pages with 2-fingers swipe left or right
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
