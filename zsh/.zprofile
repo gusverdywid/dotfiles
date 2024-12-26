@@ -75,31 +75,5 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-#
-# rbenv
-#
-
-# add rbenv to shell so it loads every time terminal is opened
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-fi
-
-
-#
-# Android SDK
-#
-
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
-
-# Setting PATH for Python 3.6
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
 
 export TERM="xterm-256color"
-
-
-export PATH="$HOME/.cargo/bin:$PATH"
