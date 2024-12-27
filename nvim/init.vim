@@ -220,6 +220,7 @@ set nostartofline
 set ruler
 " Show marker
 set textwidth=100
+" set columns=80
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
