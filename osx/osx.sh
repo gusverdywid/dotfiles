@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Reference: https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
+invoker_dir=$(pwd)
+cd "$(dirname $0)"
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -163,3 +166,5 @@ defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool true
 
 # Switch pages with 2-fingers swipe left or right
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
+
+cd $invoker_dir

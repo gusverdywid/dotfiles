@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+invoker_dir=$(pwd)
+cd "$(dirname $0)"
+
 brew install zsh
 chsh -s $(which zsh)
 cat .zshrc >> ~/.zshrc
@@ -23,3 +26,5 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 cat prezto.conf >> ~/.zshrc
 ## Commented out to configure manually
 # cp ~/dotfiles/zsh/.zpreztorc ~/
+
+cd $invoker_dir
