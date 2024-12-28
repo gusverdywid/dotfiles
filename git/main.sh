@@ -11,4 +11,4 @@ git config --global apply.whitespace fix
 git config --global pull.rebase true
 git config --global push.default simple
 
-./diff-so-fancy.sh
+source ./diff-so-fancy.sh

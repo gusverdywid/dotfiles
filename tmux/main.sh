@@ -7,4 +7,4 @@ brew install 'reattach-to-user-namespace'
 
 cp .tmux.conf ~/.tmux.conf
 
-./plugins.sh
+source ./plugins.sh

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-./init.sh
-./programs.sh
+source ./init.sh
+source ./programs.sh

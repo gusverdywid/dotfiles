@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-./git/main.sh
+source ./git/main.sh
 
-./zsh/main.sh
+source ./zsh/main.sh
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -40,7 +40,7 @@ echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
 # Code search
 brew install 'the_silver_searcher'
 
-./tmux/main.sh
+source ./tmux/main.sh
 
 # Facebook path picker: pick files path from command output then pipe the files
 # into any command

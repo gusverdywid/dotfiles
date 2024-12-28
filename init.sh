@@ -5,7 +5,7 @@ echo 'Installing Xcode Command Line Tools'
 xcode-select --install
 
 echo 'Configuring mac'
-./osx/osx.sh
+source ./osx/osx.sh
 
 # Install homebrew
 echo 'Installing and configuring homebrew'
