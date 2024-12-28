@@ -12,7 +12,6 @@ source ~/.zshrc
 
 # Configure homebrew for zsh assuming homebrew is already installed
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zinit formerly zplugin: zsh plugin manager
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
