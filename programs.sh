@@ -63,17 +63,17 @@ mise completion zsh  > /usr/local/share/zsh/site-functions/_mise
 
 # Util
 ## Unpack archive file
-brew cask install 'the-unarchiver'
+brew install --cask 'the-unarchiver'
 ## Prevent computer going to sleep or start screen saver
-brew cask install 'caffeine'
+brew install --cask 'caffeine'
 ## Enable routing of audio, for instance for screen recording
-brew cask install 'blackhole-2ch'
+brew install --cask 'blackhole-2ch'
 
 # Security
 ## Monitor webcam and mic
-brew cask install 'oversight'
+brew install --cask 'oversight'
 ## Uncover persistenly install programm
-brew cask install 'knockknock'
+brew install --cask 'knockknock'
 
 # Dev
 brew install 'vim' --with-override-system-vim --with-lua --with-csope
@@ -88,38 +88,38 @@ brew install jesseduffield/lazygit/lazygit
 ## Correct and clean-up html and xml
 brew install 'tidy-html5'
 ## Terminal
-brew cask install 'iterm2'
+brew install --cask 'iterm2'
 ## Code editor
-brew cask install 'visual-studio-code'
+brew install --cask 'visual-studio-code'
 ## Diff tools
-brew cask install 'beyond-compare'
+brew install --cask 'beyond-compare'
 ## Android IDE
-brew cask install 'android-studio'
+brew install --cask 'android-studio'
 ## Debugger of react-native
-brew cask install 'reactotron'
+brew install --cask 'reactotron'
 ## API docs browser and code snippet
-brew cask install 'dash'
+brew install --cask 'dash'
 ## Git client
-brew cask install 'gitup'
+brew install --cask 'gitup'
 ## API client, API dev tools
-brew cask install 'postman'
+brew install --cask 'postman'
 ## Postgresql GUI client
-brew cask install 'pgadmin4'
+brew install --cask 'pgadmin4'
 # A git client
-brew cask install 'fork'
+brew install --cask 'fork'
 
 # Misc.
-brew cask install 'firefox'
-brew cask install 'notion'
-brew cask install 'spotify'
-brew cask install 'vlc'
-brew cask install 'bitwarden'
+brew install --cask 'firefox'
+brew install --cask 'notion'
+brew install --cask 'spotify'
+brew install --cask 'vlc'
+brew install --cask 'bitwarden'
 # Show key bind of any apps
-brew cask install 'cheatsheet'
+brew install --cask 'cheatsheet'
 # Renaming movie, fetching artwork and subtitle
-brew cask install 'filebot'
+brew install --cask 'filebot'
 # Screencapture into GIF
-brew cask install 'licecap'
+brew install --cask 'licecap'
 
 brew linkapps
 
