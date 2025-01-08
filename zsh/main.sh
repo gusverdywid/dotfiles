@@ -23,7 +23,7 @@ cat zinit.conf >> ~/.zshrc
 
 # Prezto zsh framework
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-cat prezto.conf >> ~/.zshrc
+echo 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"' >> ~/.zshrc
 ## Commented out to configure manually
 # cp ~/dotfiles/zsh/.zpreztorc ~/
 
